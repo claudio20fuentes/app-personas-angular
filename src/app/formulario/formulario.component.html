@@ -1,0 +1,38 @@
+<br />
+<form
+  class="form-row rounded shadow m-2 text-light"
+  style="background-color: #fdfefe"
+>
+  <div class="ps-3 pe-3 form-group col">
+    <label class="sr-only" for="nombre">Nombre</label>
+    <input
+      type="text"
+      name="nombre"
+      id="nombre"
+      placeholder="Nombre"
+      class="col-md-5 form-control"
+      #nombreInput
+    />
+  </div>
+  <div class="ps-3 pe-3 form-group col">
+    <label class="sr-only" for="apellido">Apellido</label>
+    <input
+      type="text"
+      name="apellido"
+      id="apellido"
+      placeholder="Apellido"
+      class="col-md-5 form-control"
+      #nombreApellido
+    />
+  </div>
+  <div class="p-3 col">
+    <button
+      type="submit"
+      class="btn btn-primary form-control col-md-5"
+      (click)="agregarPersona()"
+    >
+      Agregar
+    </button>
+  </div>
+</form>
+<br />
