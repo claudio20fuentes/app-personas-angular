@@ -1,10 +1,9 @@
 <table class="table">
-  <tbody>
+  <tbody [routerLink]="['/personas',indice]"
+         [queryParams]="{modoEdicion:'1'}">
     <tr>
-      <th scope="col">{{ indice }}</th>
       <td scope="col">{{ persona.nombre }}</td>
       <td scope="col">{{ persona.apellido }}</td>
-      <td><button type="submit" class="btn btn-info" (click)="emitirSaludo()">Editar</button></td>
     </tr>
   </tbody>
 </table>

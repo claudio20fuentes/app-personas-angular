@@ -1,0 +1,24 @@
+<!--COMPONENTE HIJO-->
+<div style="text-align: center;">
+  <button style="cursor: pointer" (click)="agregar()">+</button>
+</div>
+<router-outlet></router-outlet>
+<!--COMPONENTE HIJO-->
+<hr />
+<div class="container m-2 rounded shadow" style="background-color: #fdfefe">
+  <table class="table justify-content-center">
+    <thead>
+      <tr>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">APELLIDO</th>
+      </tr>
+    </thead>
+  </table>
+  <app-persona
+    class=""
+    *ngFor="let personaElemento of personas; let i = index"
+    [persona]="personaElemento"     
+    [indice]="i"
+  >
+  </app-persona>
+</div>

@@ -2,6 +2,8 @@
 <form
   class="form-row rounded shadow m-2 text-light"
   style="background-color: #fdfefe"
+  #f="ngForm" 
+  (ngSubmit)="f.form.valid && onGuardarPersona()"
 >
   <div class="ps-3 pe-3 form-group col">
     <label class="sr-only" for="nombre">Nombre</label>
@@ -11,7 +13,8 @@
       id="nombre"
       placeholder="Nombre"
       class="col-md-5 form-control"
-      #nombreInput
+      [(ngModel)]="nombreInput"
+      required
     />
   </div>
   <div class="ps-3 pe-3 form-group col">
@@ -22,16 +25,25 @@
       id="apellido"
       placeholder="Apellido"
       class="col-md-5 form-control"
-      #nombreApellido
-    />
+      [(ngModel)]="apellidoInput"
+      required
+      />
   </div>
   <div class="p-3 col">
     <button
       type="submit"
-      class="btn btn-primary form-control col-md-5"
-      (click)="agregarPersona()"
-    >
+      class="btn btn-info form-control col-md-5"
+      >
       Agregar
+    </button>
+    <br>
+    <button
+    class="btn btn-danger form-control col-md-5 mt-2"
+    *ngIf="index != null"
+    type="submit"
+    (click)="eliminar()"
+    >
+      Eliminar
     </button>
   </div>
 </form>
