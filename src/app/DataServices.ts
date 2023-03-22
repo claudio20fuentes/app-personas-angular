@@ -34,4 +34,19 @@ export class DataServices{
         ); 
     }
 
+    eliminarPersona(indice:number){
+        //creamos la url
+        //asignamos valor a la url, url + indice + .json
+        //pasamos por parametros indice url + indice al metodo delete de httpClient
+        //nos subscribimos al metodo creamos response y error
+        let url: string;
+        url = 'https://listado-personas-e94dd-default-rtdb.firebaseio.com/datos/'+indice+'.json';
+        this.httpClient.delete(url).
+        subscribe(
+            response => console.log('Persona eliminada' + response),
+            error => console.log('error',error)
+        )
+
+    }
+
 }

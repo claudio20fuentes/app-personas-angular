@@ -46,5 +46,16 @@ export class PersonasService{
     }
     eliminarPersona(index:number){
       this.personas.splice(index,1);
+      this.dataService.eliminarPersona(index);
+      //se vuelve a guardar el arreglo para regenerar los indices en la bd
+      this.modificarPersonas();
     }
+    modificarPersonas(){
+      if (this.personas != null) 
+        this.dataService.guardarPersonas(this.personas);
+      {
+        
+      }
+    }
+
 }
