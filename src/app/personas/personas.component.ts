@@ -24,6 +24,7 @@ ngOnInit(){
   .subscribe(
       (personas:Persona[]) => {
       this.personas = personas;
+      console.log(this.personas);
       this.personasService.setPersonas(personas);
     });
 }

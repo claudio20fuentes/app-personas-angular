@@ -21,7 +21,7 @@ export class PersonasService{
     obtenerPersonas(){
       console.log(this.dataService.cargarPersonas());
       console.log("dsalñfjklpdsñfk");
-
+      
       return this.dataService.cargarPersonas();  
     }
 

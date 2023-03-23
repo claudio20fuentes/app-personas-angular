@@ -1,18 +1,23 @@
 import { HttpClient } from '@angular/common/http' ;
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginService } from './login/login.service';
 import { Persona } from './persona.model';
 
 
 @Injectable()
 export class DataServices{
     
-    constructor(private httpClient:HttpClient){
+    constructor(private httpClient:HttpClient, private loginService:LoginService){
 
     }
 
     cargarPersonas():Observable<any>{
-        return this.httpClient.get('https://listado-personas-e94dd-default-rtdb.firebaseio.com/datos.json');
+        const token = this.loginService.getIdToken();
+        console.log("aca estoyyyyyyyyyyyyyyyyyyyyy" + token);
+        console.log(this.httpClient.get('https://listado-personas-e94dd-default-rtdb.firebaseio.com/datos.json?auth=' + token));
+
+        return this.httpClient.get('https://listado-personas-e94dd-default-rtdb.firebaseio.com/datos.json?auth=' + token);
     }
 
     guardarPersonas(personas:Persona[]){
